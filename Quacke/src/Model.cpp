@@ -158,7 +158,11 @@ std::vector<Texture> Model::loadMaterialtoTexture(aiMaterial* mat, aiTextureType
 		}
 		if(!skip)
 		{
-			Texture texture(str.C_Str(), typeName);
+			std::string tmpPath = path;
+			std::string pathToTexture = tmpPath.substr(0, tmpPath.find_last_of('/'));
+			pathToTexture.append("/");
+			pathToTexture.append(str.C_Str());
+			Texture texture(pathToTexture, typeName);
 			texs.push_back(texture);
 			loadedTexture.push_back(texture);
 		}

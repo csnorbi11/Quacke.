@@ -142,7 +142,6 @@ int main()
 		////**********////	
 		physics.instance().updatePhysics(player, enviroment, enemies, deltaTime);
 		player.update(physics.GetFixedDeltaTime(),deltaTime);
-		std::cout << player.position << std::endl;
 		camera.update(deltaTime, player);
 		
 		//system("CLS");
