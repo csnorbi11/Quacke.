@@ -38,6 +38,12 @@
     Enemies with pathfinding
   </li>
   <li>
+    Lighting, Skybox
+  </li>
+  <li>
+    Game manager
+  </li>
+  <li>
     UI
   </li>
   <li>
