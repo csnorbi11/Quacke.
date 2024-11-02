@@ -17,10 +17,31 @@
     Character controller: this is for "living" entities
   </li>
   <li>
-    It supports wavefront objects either
+    It supports wavefront objects for sure
   </li>
   <li>
     Has a basic performance profiler which writes out FPS, and process time in ms for each main segment.
+  </li>
+</lu>
+<h2>Features to be added</h2>
+<lu>
+  <li>
+    Scene importer
+  </li>
+  <li>
+    Smoother player movement
+  </li>
+  <li>
+    Weapons
+  </li>
+  <li>
+    Enemies with pathfinding
+  </li>
+  <li>
+    UI
+  </li>
+  <li>
+    and more
   </li>
 </lu>
 <img src="https://github.com/user-attachments/assets/27a9a242-2659-4eea-b4e7-02e49fe4c87b">
