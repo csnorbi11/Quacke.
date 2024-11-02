@@ -1,12 +1,12 @@
 <h1>QUACKE</h1>
-<p>It's going to be a Quake like game (once in the future :D). It's written in C++ with OpenGL 3.3 for graphics, Bullet3 for physics simulation and imgui for developer ui.</p>
+<p>It's going to be a Quake like game. It's written in C++ with OpenGL 3.3 for graphics, Bullet3 for physics simulation and imgui for developer ui.</p>
 <h2>Purpose</h2>
-<p>It's only purpose is learning. I want to be a game developer and I want to improve myself as a programmer, so I started to make this without a game engine.</p>
+<p>It's only purpose is learning.I want to improve myself as a programmer and I'm interested in video game technologies, so I started to make this without a game engine.</p>
 <h2>Features which are currently in</h2>
 <p>The project contains several thing:</p>
 <lu>
   <li>
-    Resource manager: which loads and check if a resource is loaded into the memory. 
+    Asset manager: which loads and check if an asset is loaded into the memory. 
   </li>
   <li>
     Entity: objects which are in the game world
