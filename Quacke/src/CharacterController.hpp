@@ -57,7 +57,7 @@ public:
 	 * Updates the CC. Sets the walk direction of the CC and updates it's position by the simulated one.
 	 * 
 	 */
-	void update();
+	void update(float physicsFixedDeltaTime, float deltaTime);
 
 
 	/**

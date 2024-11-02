@@ -54,3 +54,18 @@ void Texture::useTexture()
 	glActiveTexture(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, ID);
 }
+
+std::string Texture::GetPath()
+{
+	return path;
+}
+
+std::string Texture::GetType()
+{
+	return path;
+}
+
+GLuint Texture::GetID()
+{
+	return ID;
+}

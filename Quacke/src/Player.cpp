@@ -13,17 +13,18 @@ Player::~Player()
 	std::cout;
 }
 	
-void Player::update(float deltaTime)
+void Player::update(float physicsFixedDeltaTime, float deltaTime)
 {
 	cameraPosition = position;
 	cameraPosition.y += mheight;
 	calculateDirection();
 	calculateFrontAndRight();
-	move(deltaTime);
-	CharacterController::update();
+	move(physicsFixedDeltaTime);
+	CharacterController::update(physicsFixedDeltaTime,deltaTime);
 }
 
-void Player::move(float deltaTime)
+void Player::move(float physicsFixedDeltaTime)
 {
-	velocity = (front * moveInput.z + right * moveInput.x) * moveSpeed * deltaTime;
+	velocity = (front * moveInput.z + right * moveInput.x) * moveSpeed* physicsFixedDeltaTime;
 }
+

@@ -31,6 +31,21 @@ AABB::AABB(float minx, float maxx, float miny, float maxy, float minz, float max
 	depth = (abs(minz) + abs(maxz)) / 2;
 }
 
+AABB::AABB(const AABB& rhs)
+{
+	this->minX = rhs.minX;
+	this->minY = rhs.minY;
+	this->minZ = rhs.minZ;
+
+	this->maxX = rhs.maxX;
+	this->maxY = rhs.maxY;
+	this->maxZ = rhs.maxZ;
+
+	this->width = rhs.width;
+	this->height = rhs.height;
+	this->depth = rhs.depth;
+}
+
 float AABB::getWidth()
 {
 	return width;

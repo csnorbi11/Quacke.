@@ -30,14 +30,7 @@ public:
 	Model(const char* path);
 	~Model();
 
-	void Draw(Shader& shader)
-	{
-		for (unsigned int i = 0; i < meshes.size(); i++)
-		{
-			
-			meshes[i].Draw(shader);
-		}
-	}
+	void Draw(Shader& shader);
 
 	btCompoundShape* getCompoundCollider();
 	btConvexShape* getBoxCollider();

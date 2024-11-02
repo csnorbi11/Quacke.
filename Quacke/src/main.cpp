@@ -20,9 +20,11 @@
 #define PROFILING
 
 #ifdef IMGUI
+#pragma warning(push, 0)
 #include "../imgui/imgui.h"
 #include "../imgui/imgui_impl_glfw.h"
 #include "../imgui/imgui_impl_opengl3.h"
+#pragma warning(pop)
 #endif // IMGUI
 
 
@@ -71,9 +73,6 @@ int main()
 	std::vector<Enemy> enemies;
 	
 	std::vector<EnviromentEntity> enviroment;
-	enviroment.push_back(EnviromentEntity("textured", "models/env2.obj", "asd", 0, 100.1f, mVector3(0, -20., 0.), mVector3(0.0, 0.0, 0.0)));
-	enviroment.push_back(EnviromentEntity("textured", "models/env2.obj", "asd", 0, 100.1f, mVector3(0, -20., 0.), mVector3(0.0, 0.0, 0.0)));
-	enviroment.push_back(EnviromentEntity("textured", "models/env2.obj", "asd", 0, 100.1f, mVector3(0, -20., 0.), mVector3(0.0, 0.0, 0.0)));
 	enviroment.push_back(EnviromentEntity("textured", "models/env2.obj", "asd", 0, 100.1f, mVector3(0, -20., 0.), mVector3(0.0, 0.0, 0.0)));
 
 	double startofFrame = 0.0f;
@@ -142,8 +141,8 @@ int main()
 		////GAME LOGIC////
 		////**********////	
 		physics.instance().updatePhysics(player, enviroment, enemies, deltaTime);
-		player.update(deltaTime);
-
+		player.update(physics.GetFixedDeltaTime(),deltaTime);
+		std::cout << player.position << std::endl;
 		camera.update(deltaTime, player);
 		
 		//system("CLS");

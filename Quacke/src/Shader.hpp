@@ -12,18 +12,19 @@
  * Shader program.
  */
 class Shader {
-	unsigned int ID;
+	GLuint ID;
 
 public:
 	Shader(const char* vertSSP, const char* fragSSP);
 	~Shader();
 
 	void use() const;
-	unsigned int getID() const;
+	GLuint getID() const;
 
-	void setFloat(const char* varName, float value);
-	void setInt(const char* varName, int value);
-	void setBool(const char* varName, bool value);
+	void setFloat(const char* varName, GLfloat GLfloat);
+	void setInt(const char* varName, GLint value);
+	void setUInt(const char* varName, GLuint value);
+	void setBool(const char* varName, GLboolean value);
 	void setMat4(const char* varName, glm::mat4 value);
 	void setVec3(const char* varName, glm::vec3 value);
 

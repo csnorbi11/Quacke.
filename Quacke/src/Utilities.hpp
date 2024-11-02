@@ -19,8 +19,8 @@ struct mVector3 {
 	mVector3& operator+=(const mVector3& rhs);
 	mVector3& operator-=(const mVector3& rhs);
 
-	mVector3& operator*(double multiplier);
-	mVector3& operator/(double divider);
+	mVector3& operator*(float multiplier);
+	mVector3& operator/(float divider);
 
 	bool operator==(const mVector3& rhs);
 	bool operator!=(const mVector3& rhs);

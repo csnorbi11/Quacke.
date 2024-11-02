@@ -13,6 +13,14 @@ Model::~Model()
 	
 }
 
+void Model::Draw(Shader& shader)
+{
+	for (unsigned int i = 0; i < meshes.size(); i++)
+	{
+		meshes[i].Draw(shader);
+	}
+}
+
 btCompoundShape* Model::getCompoundCollider()
 {
 	return compoundCollider;
@@ -141,7 +149,7 @@ std::vector<Texture> Model::loadMaterialtoTexture(aiMaterial* mat, aiTextureType
 		bool skip = false;
 		for (unsigned int j = 0; j < loadedTexture.size(); j++)
 		{
-			if (std::strcmp(loadedTexture[j].path.data(), str.C_Str()) == 0)
+			if (std::strcmp(loadedTexture[j].GetPath().data(), str.C_Str()) == 0)
 			{
 				texs.push_back(loadedTexture[j]);
 				skip = true;

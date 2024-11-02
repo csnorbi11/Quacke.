@@ -18,9 +18,10 @@ struct Player : public CharacterController
 	Player();
 	~Player();
 
-	void update(float deltaTime);
+	void update(float physicsFixedDeltaTime, float deltaTime);
 	//calculates the velocity by the inputs
-	void move(float deltaTime);
+	void move(float physicsFixedDeltaTime);
+
 };
 
 #endif // !Player

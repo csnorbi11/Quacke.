@@ -24,12 +24,12 @@ struct Vertex {
  */
 class Mesh {
 	std::vector<Vertex> vertices;
-	std::vector<unsigned int> indices;
+	std::vector<GLuint> indices;
 	std::vector<Texture> textures;
 
 	AABB aabb;
 
-	unsigned int VBO, VAO, EBO;
+	GLuint VBO, VAO, EBO;
 
 public:
 	Mesh(std::vector<Vertex> verts, std::vector<unsigned int> inds, std::vector<Texture> texs);
@@ -41,21 +41,21 @@ public:
 	 */
 	void Draw(Shader& shader)
 	{
-		unsigned int diffuseNr = 1;
-		unsigned int specularNr = 1;
+		GLuint diffuseNr = 1;
+		GLuint specularNr = 1;
 		//passes the mesh's textures to the shader program
-		for (unsigned int i = 0; i < textures.size(); i++)
+		for (GLuint i = 0; i < textures.size(); i++)
 		{
 			glActiveTexture(GL_TEXTURE0 + i);
 			std::string number;
-			std::string name = textures[i].type;
+			std::string name = textures[i].GetType();
 			if (name == "texture_diffuse")
 				number = std::to_string(diffuseNr++);
 			else if (name == "texture_specular")
 				number = std::to_string(specularNr++);
 			
-			shader.setInt((name + number).c_str(), i);
-			glBindTexture(GL_TEXTURE_2D, textures[i].ID);
+			shader.setUInt((name + number).c_str(), i);
+			glBindTexture(GL_TEXTURE_2D, textures[i].GetID());
 		}
 		
 

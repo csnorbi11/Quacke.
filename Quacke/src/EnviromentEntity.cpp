@@ -13,7 +13,7 @@ EnviromentEntity::~EnviromentEntity()
 {
 }
 
-void EnviromentEntity::update(float deltaTime)
+void EnviromentEntity::update(float physicsFixedDeltaTime, float deltaTime)
 {
 	updateRigidbody();
 }

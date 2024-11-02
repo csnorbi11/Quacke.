@@ -2,9 +2,9 @@
 
 mVector3::mVector3()
 	:
-	x(0),
-	y(0),
-	z(0),
+	x(0.f),
+	y(0.f),
+	z(0.f),
 	length(0)
 {
 	calculateLength();
@@ -14,7 +14,7 @@ mVector3::mVector3(double value)
 	x(value),
 	y(value),
 	z(value),
-	length(0)
+	length(0.)
 {
 	calculateLength();
 }
@@ -23,7 +23,7 @@ mVector3::mVector3(double X, double Y, double Z)
 	x(X),
 	y(Y),
 	z(Z),
-	length(0)
+	length(0.f)
 {
 	calculateLength();
 }
@@ -87,7 +87,7 @@ mVector3& mVector3::operator-=(const mVector3& rhs)
 	return *this;
 }
 
-mVector3& mVector3::operator*(double multiplier)
+mVector3& mVector3::operator*(float multiplier)
 {
 	x *= multiplier;
 	y *= multiplier;
@@ -96,7 +96,7 @@ mVector3& mVector3::operator*(double multiplier)
 	return *this;
 }
 
-mVector3& mVector3::operator/(double divider)
+mVector3& mVector3::operator/(float divider)
 {
 	x /= divider;
 	y /= divider;

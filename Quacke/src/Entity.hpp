@@ -23,7 +23,7 @@ public:
 	Entity(const char* nam, mVector3 pos=mVector3(0.0), mVector3 rot = mVector3(0.0), mVector3 dir = mVector3(0.0));
 	virtual ~Entity();
 
-	virtual void update(float deltaTime) = 0;
+	virtual void update(float physicsFixedDeltaTime, float deltaTime) = 0;
 	virtual void move(float deltaTime) = 0;
 
 	float calculateDistance(const Entity& target);

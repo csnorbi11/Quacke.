@@ -24,8 +24,7 @@ class Physics
 	btDiscreteDynamicsWorld* dynamicsWorld;
 
 	float timeSinceLastStep;
-
-	float simulationTimeStep;
+	float fixedDeltaTime;
 
 
 public:
@@ -50,7 +49,7 @@ public:
 		assert((std::is_base_of<Rigidbody, T>::value == 1));
 		assert((std::is_base_of<CharacterController, S>::value == 1));
 
-		dynamicsWorld->stepSimulation(simulationTimeStep, 10);		
+		dynamicsWorld->stepSimulation(deltaTime, 3, fixedDeltaTime);
 
 		
 		for (unsigned int i = 0; i < rigidbodies.size(); i++)
@@ -67,7 +66,7 @@ public:
 			player.isAdded = true;
 
 			dynamicsWorld->addCollisionObject(player.ghostObject, btBroadphaseProxy::CharacterFilter, btBroadphaseProxy::StaticFilter | btBroadphaseProxy::CharacterFilter);
-			dynamicsWorld->addAction(player.character);
+			dynamicsWorld->addCharacter(player.character);
 		}
 		for (unsigned int i = 0; i < enemies.size(); i++)
 		{
@@ -78,11 +77,15 @@ public:
 				dynamicsWorld->addCollisionObject(enemies[i].ghostObject, btBroadphaseProxy::CharacterFilter, btBroadphaseProxy::StaticFilter | btBroadphaseProxy::CharacterFilter);
 				dynamicsWorld->addAction(enemies[i].character);
 			}
-			enemies[i].update(1);
+			enemies[i].update(fixedDeltaTime,1);
 		}
 
 
 	}
+
+	float GetFixedDeltaTime();
+
+
 };
 
 #endif // !PHYSICS_H

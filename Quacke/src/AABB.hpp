@@ -19,6 +19,7 @@ public:
 	AABB();
 	AABB(float minx, float maxx, float miny, float maxy, float minz, float maxz);
 
+	AABB(const AABB& rhs);
 
 	float getWidth();
 	float getHeight();

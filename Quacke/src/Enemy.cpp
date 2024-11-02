@@ -15,9 +15,9 @@ Enemy::~Enemy()
 	
 }
 
-void Enemy::update(float deltaTime)
+void Enemy::update(float physicsFixedDeltaTime, float deltaTime)
 {
-	CharacterController::update();
+	CharacterController::update(physicsFixedDeltaTime, deltaTime);
 }
 
 void Enemy::update(float deltaTime, const Entity& target)

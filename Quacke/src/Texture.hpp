@@ -9,15 +9,18 @@
 
 class Texture
 {
-public:
-	unsigned int ID;
 	std::string path;
-	const char* type;
+	std::string type;
+	GLuint ID;
 public:
 
 	Texture(std::string path, const char* typ);
 	~Texture();
 	void useTexture();
+
+	std::string GetPath();
+	std::string GetType();
+	GLuint GetID();
 };
 
 #endif // !TEXTURE_H

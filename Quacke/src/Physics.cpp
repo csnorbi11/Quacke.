@@ -11,10 +11,9 @@ Physics::Physics()
 	solver(new btSequentialImpulseConstraintSolver()),
 	dynamicsWorld(new btDiscreteDynamicsWorld(dispatcher,overlappingPairCache,solver,collisionConfig)),
 	timeSinceLastStep(0.0f),
-	simulationTimeStep(1.0f/60.0f)
+	fixedDeltaTime(1.f/60.f)
 {
 	dynamicsWorld->getDispatchInfo().m_allowedCcdPenetration = 0.00001f;
-
 	sweepBP->getOverlappingPairCache()->setInternalGhostPairCallback(new btGhostPairCallback());;
 }
 
@@ -34,3 +33,9 @@ btDiscreteDynamicsWorld* Physics::getDynamicsWorld()
 {
 	return dynamicsWorld;
 }
+
+float Physics::GetFixedDeltaTime()
+{
+	return fixedDeltaTime;
+}
+

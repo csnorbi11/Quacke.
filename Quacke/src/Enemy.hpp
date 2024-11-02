@@ -19,7 +19,7 @@ public:
 		mVector3 pos = mVector3(0,0,0), mVector3 rot = mVector3(0, 0, 0));
 	~Enemy();
 
-	void update(float deltaTime);
+	void update(float physicsFixedDeltaTime, float deltaTime);
 	void update(float deltaTime, const Entity& target);
 	void move(float deltaTime);
 };

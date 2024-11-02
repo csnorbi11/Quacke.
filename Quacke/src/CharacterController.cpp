@@ -76,7 +76,7 @@ void CharacterController::initCharacterController(Model model)
 	character->setJumpSpeed(jumpSpeed);
 }
 
-void CharacterController::update()
+void CharacterController::update(float physicsFixedDeltaTime, float deltaTime)
 {
 	character->setWalkDirection(btVector3(velocity.x, velocity.y, velocity.z));
 	transform = ghostObject->getWorldTransform();

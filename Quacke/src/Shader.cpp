@@ -101,22 +101,27 @@ void Shader::use() const
 	glUseProgram(ID);
 }
 
-unsigned int Shader::getID() const
+GLuint Shader::getID() const
 {
 	return ID;
 }
 
-void Shader::setFloat(const char* varName, float value)
+void Shader::setFloat(const char* varName, GLfloat value)
 {
 	glUniform1f(glGetUniformLocation(ID, varName), value);
 }
 
-void Shader::setInt(const char* varName, int value)
+void Shader::setInt(const char* varName, GLint value)
 {
 	glUniform1i(glGetUniformLocation(ID, varName), value);
 }
 
-void Shader::setBool(const char* varName, bool value)
+void Shader::setUInt(const char* varName, GLuint value)
+{
+	glUniform1ui(glGetUniformLocation(ID, varName), value);
+}
+
+void Shader::setBool(const char* varName, GLboolean value)
 {
 	glUniform1i(glGetUniformLocation(ID, varName), value);
 }
