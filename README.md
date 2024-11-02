@@ -6,6 +6,9 @@
 <p>The project contains several thing:</p>
 <lu>
   <li>
+    Physics simulation
+  </li>
+  <li>
     Asset manager: which loads and check if an asset is loaded into the memory. 
   </li>
   <li>
