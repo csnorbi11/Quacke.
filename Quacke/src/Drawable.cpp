@@ -2,18 +2,18 @@
 
 Drawable::Drawable(const char* shaderName, const char* modelPath)
 	:
-	rmanager(rmanager.instance()),
-	shader(rmanager.instance().getShader(shaderName)),
-	model(rmanager.instance().getModel(modelPath)),
+	assetManager(assetManager.instance()),
+	shader(assetManager.instance().getShader(shaderName)),
+	model(assetManager.instance().getModel(modelPath)),
 	drawable(false)
 {
 
-	if (!rmanager.instance().isShaderExists(shaderName))
+	if (!assetManager.instance().isShaderExists(shaderName))
 	{
 		std::cout << "No shaders exists with name of \"" << shaderName << "\"" << std::endl;
 		drawable = false;
 	}
-	else if (!rmanager.instance().isModelExists(modelPath))
+	else if (!assetManager.instance().isModelExists(modelPath))
 	{
 		std::cout << "No model exists with path:  \"" << modelPath << "\"" << std::endl;
 		drawable = false;
@@ -21,7 +21,7 @@ Drawable::Drawable(const char* shaderName, const char* modelPath)
 	}
 	else
 	{
-		shader = rmanager.instance().getShader(shaderName);
+		shader = assetManager.instance().getShader(shaderName);
 		drawable = true;
 	}
 

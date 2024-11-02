@@ -1,20 +1,20 @@
-#include "ResourceManager.hpp"
+#include "AssetManager.hpp"
 
 
-ResourceManager::ResourceManager()
+AssetManager::AssetManager()
 {}
 
-ResourceManager::~ResourceManager()
+AssetManager::~AssetManager()
 {
 }
 
-ResourceManager& ResourceManager::instance()
+AssetManager& AssetManager::instance()
 {
-	static ResourceManager* _instance = new ResourceManager();
+	static AssetManager* _instance = new AssetManager();
 	return *_instance;
 }
 
-void ResourceManager::createShader(const char* shaderName, const char* vertexShaderSourcePath, const char* fragmentShaderSourcePath)
+void AssetManager::createShader(const char* shaderName, const char* vertexShaderSourcePath, const char* fragmentShaderSourcePath)
 {
 	unsigned int key = getKey(shaderName);
 
@@ -25,17 +25,17 @@ void ResourceManager::createShader(const char* shaderName, const char* vertexSha
 	}
 }
 
-Shader& ResourceManager::getShader(const char* shaderName)
+Shader& AssetManager::getShader(const char* shaderName)
 {	
 	return shaders.at(getKey(shaderName));
 }
 
-bool ResourceManager::isShaderExists(const char* shaderName)
+bool AssetManager::isShaderExists(const char* shaderName)
 {
 	return shaders.count(getKey(shaderName)) == 0 ? false : true;
 }
 
-void ResourceManager::createModel(const char* modelPath)
+void AssetManager::createModel(const char* modelPath)
 {
 	unsigned int key = getKey(modelPath);
 
@@ -46,18 +46,18 @@ void ResourceManager::createModel(const char* modelPath)
 	}
 }
 
-Model& ResourceManager::getModel(const char* modelPath)
+Model& AssetManager::getModel(const char* modelPath)
 {
 	assert(isModelExists(modelPath));
 	return models.at(getKey(modelPath));
 }
 
-bool ResourceManager::isModelExists(const char* modelPath)
+bool AssetManager::isModelExists(const char* modelPath)
 {
 	return models.count(getKey(modelPath)) == 0 ? false : true;
 }
 
-unsigned int ResourceManager::getKey(const char* rsourceName)
+unsigned int AssetManager::getKey(const char* rsourceName)
 {
 	unsigned int key = 0;
 	int i = 0;

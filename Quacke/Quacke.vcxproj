@@ -169,7 +169,7 @@
     <ClInclude Include="src\Physics.hpp" />
     <ClInclude Include="src\Player.hpp" />
     <ClInclude Include="src\Renderer.hpp" />
-    <ClInclude Include="src\ResourceManager.hpp" />
+    <ClInclude Include="src\AssetManager.hpp" />
     <ClInclude Include="src\Rigidbody.hpp" />
     <ClInclude Include="src\Shader.hpp" />
     <ClInclude Include="src\stb_image.h" />
@@ -198,7 +198,7 @@
     <ClCompile Include="src\Physics.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
-    <ClCompile Include="src\ResourceManager.cpp" />
+    <ClCompile Include="src\AssetManager.cpp" />
     <ClCompile Include="src\Rigidbody.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Texture.cpp" />

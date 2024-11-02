@@ -12,16 +12,16 @@
  * It manages shaders and models. Creates them and check if they are created.
  * 
  */
-class ResourceManager
+class AssetManager
 {
 	std::map<unsigned int, Shader> shaders;
 	std::map<unsigned int, Model> models;
 
 public:
-	ResourceManager();
-	~ResourceManager();
+	AssetManager();
+	~AssetManager();
 
-	static ResourceManager& instance();
+	static AssetManager& instance();
 
 	void createShader(const char* shaderName, const char* vertexShaderSourcePath, const char* fragmentShaderSourcePath);
 	Shader& getShader(const char* shaderName);

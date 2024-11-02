@@ -6,7 +6,7 @@
 #include <bullet/btBulletDynamicsCommon.h>
 #include <stdio.h>
 
-#include "ResourceManager.hpp"
+#include "AssetManager.hpp"
 #include "Player.hpp"
 #include "Enemy.hpp"
 #include "EnviromentEntity.hpp"
@@ -55,12 +55,12 @@ int main()
 	imgui_init(window);
 #endif // IMGUI
 
-	ResourceManager resourceManager;
-	resourceManager.instance();
-	resourceManager.instance().createModel("models/env2.obj");
+	AssetManager assetManager;
+	assetManager.instance();
+	assetManager.instance().createModel("models/env2.obj");
 
-	resourceManager.instance().createShader("textured", "shaders/TEXTURED.vert", "shaders/TEXTURED.frag");
-	Shader textured = resourceManager.instance().getShader("textured");
+	assetManager.instance().createShader("textured", "shaders/TEXTURED.vert", "shaders/TEXTURED.frag");
+	Shader textured = assetManager.instance().getShader("textured");
 
 
 	Player player;

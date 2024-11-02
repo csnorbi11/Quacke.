@@ -3,13 +3,13 @@
 
 #include <iostream>
 
-#include "ResourceManager.hpp"
+#include "AssetManager.hpp"
 
 /**
  * It contains everything (Shader, Model) for Entities which are going to be drawn.
  */
 class Drawable {
-	ResourceManager rmanager;
+	AssetManager assetManager;
 	Shader& shader;
 	Model& model;
 
