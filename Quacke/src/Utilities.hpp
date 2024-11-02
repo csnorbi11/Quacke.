@@ -8,8 +8,8 @@ struct mVector3 {
 	float length;
 
 	mVector3();
-	mVector3(double value);
-	mVector3(double X, double Y, double Z);
+	mVector3(float value);
+	mVector3(float X, float Y, float Z);
 	mVector3(const mVector3& rhs);
 
 	mVector3& operator+(const mVector3& rhs);

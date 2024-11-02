@@ -9,7 +9,7 @@ mVector3::mVector3()
 {
 	calculateLength();
 }
-mVector3::mVector3(double value)
+mVector3::mVector3(float value)
 	:
 	x(value),
 	y(value),
@@ -18,7 +18,7 @@ mVector3::mVector3(double value)
 {
 	calculateLength();
 }
-mVector3::mVector3(double X, double Y, double Z)
+mVector3::mVector3(float X, float Y, float Z)
 	:
 	x(X),
 	y(Y),
