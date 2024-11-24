@@ -163,7 +163,7 @@
     <ClInclude Include="imgui\imstb_truetype.h" />
     <ClInclude Include="src\AABB.hpp" />
     <ClInclude Include="src\Camera.hpp" />
-    <ClInclude Include="src\CharacterController.hpp" />
+    <ClInclude Include="src\Character.hpp" />
     <ClInclude Include="src\Drawable.hpp" />
     <ClInclude Include="src\Enemy.hpp" />
     <ClInclude Include="src\Entity.hpp" />
@@ -190,7 +190,7 @@
     <ClCompile Include="imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\AABB.cpp" />
     <ClCompile Include="src\Camera.cpp" />
-    <ClCompile Include="src\CharacterController.cpp" />
+    <ClCompile Include="src\Character.cpp" />
     <ClCompile Include="src\Drawable.cpp" />
     <ClCompile Include="src\Enemy.cpp" />
     <ClCompile Include="src\Entity.cpp" />

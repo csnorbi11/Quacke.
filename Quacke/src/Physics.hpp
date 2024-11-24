@@ -47,7 +47,7 @@ public:
 	void updatePhysics(Player& player, std::vector<T>& rigidbodies, std::vector<S>& enemies, float deltaTime)
 	{
 		assert((std::is_base_of<Rigidbody, T>::value == 1));
-		assert((std::is_base_of<CharacterController, S>::value == 1));
+		assert((std::is_base_of<Character, S>::value == 1));
 
 		dynamicsWorld->stepSimulation(deltaTime, 3, fixedDeltaTime);
 

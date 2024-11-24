@@ -99,7 +99,7 @@
     <ClInclude Include="src\Utilities.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\CharacterController.hpp">
+    <ClInclude Include="src\Character.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\EnviromentEntity.hpp">
@@ -179,7 +179,7 @@
     <ClCompile Include="src\Utilities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\CharacterController.cpp">
+    <ClCompile Include="src\Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\EnviromentEntity.cpp">

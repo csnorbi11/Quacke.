@@ -13,7 +13,7 @@
  * Character controller is for "living" entities.
  * (refered as CC later on)
  */
-class CharacterController : public Entity {
+class Character : public Entity {
 	
 	btTransform transform;
 
@@ -30,6 +30,7 @@ public:
 
 	bool isAdded;
 	mVector3 velocity;
+	mVector3 cameraPosition;
 	float moveSpeed;
 
 public:
@@ -37,21 +38,21 @@ public:
 	 * Creates a basic CC with capsule collider.
 	 * 
 	 */
-	CharacterController();
-	CharacterController(const char* name, float height, float width, float movespeed, float jumpspeed = 8.0f, mVector3 pos = mVector3(0.0), mVector3 rot = mVector3(0.0), mVector3 dir = mVector3(0.0));
-	~CharacterController();
+	Character();
+	Character(const char* name, float height, float width, float movespeed, float jumpspeed = 8.0f, mVector3 pos = mVector3(0.0), mVector3 rot = mVector3(0.0), mVector3 dir = mVector3(0.0));
+	~Character();
 
 	/**
 	 * Initiate CharController if model isn't needed. Creates a capsule collider from mwidth and mheight
 	 * It's used when the CC doesn't need model (good for player)
 	 */
-	void initCharacterController();
+	void initCharacter();
 	/**
 	 * Initiate CC when model is needed. It's using the model's box collider.
 	 * 
 	 * \param model
 	 */
-	void initCharacterController(Model model);
+	void initCharacter(Model model);
 
 	/**
 	 * Updates the CC. Sets the walk direction of the CC and updates it's position by the simulated one.

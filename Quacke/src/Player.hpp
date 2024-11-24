@@ -3,17 +3,17 @@
 
 
 #include "Entity.hpp"
-#include "CharacterController.hpp"
+#include "Character.hpp"
 
 
 /**
  * The player.
  */
-struct Player : public CharacterController
+struct Player : public Character
 {
 
 	mVector3 moveInput;
-	mVector3 cameraPosition;
+	
 
 	Player();
 	~Player();

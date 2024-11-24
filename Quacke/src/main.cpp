@@ -69,6 +69,7 @@ int main()
 	player.position.z = -2;
 	player.position.y = 30;
 	player.moveSpeed =20.0f;
+	camera.setCharacter(&player);
 
 	std::vector<Enemy> enemies;
 	
@@ -129,6 +130,8 @@ int main()
 		ImGui::Text("inputTime: %f",IMGUIinputTime);
 		ImGui::Text("updateTime: %f",IMGUIupdateTime);
 		ImGui::Text("renderTime: %f",IMGUIrenderTime);
+		if (camera.getCharacter() == nullptr)
+			ImGui::Text("No character assigned to the camera");
 #endif
 #endif // IMGUI & PORFILING		
 #ifdef PROFILING
@@ -142,7 +145,7 @@ int main()
 		////**********////	
 		physics.instance().updatePhysics(player, enviroment, enemies, deltaTime);
 		player.update(physics.GetFixedDeltaTime(),deltaTime);
-		camera.update(deltaTime, player);
+		camera.update(deltaTime);
 		
 		//system("CLS");
 

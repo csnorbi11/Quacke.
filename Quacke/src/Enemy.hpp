@@ -5,12 +5,12 @@
 
 #include "Drawable.hpp"
 #include "Entity.hpp"
-#include "CharacterController.hpp"
+#include "Character.hpp"
 
 /**
  * Basicly it's enemy type.
  */
-class Enemy : public Drawable, public CharacterController
+class Enemy : public Drawable, public Character
 {
 
 public:

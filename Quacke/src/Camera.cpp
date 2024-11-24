@@ -6,27 +6,31 @@ Camera::Camera()
 	up(0),
 	front(0),
 	mouseSensitivity(1),
+	character(),
 	position(mVector3(0.0)),
 	pitch(0),
 	yaw(0),
 	freeLook(false)
 {
+
 }
 
 Camera::~Camera()
 {
+	character = nullptr;
 }
 
 
 
-void Camera::update(float deltaTime, Player& player)
+void Camera::update(float deltaTime)
 {
-	if (!freeLook)
+	if (character != nullptr)
 	{
-		position = player.cameraPosition;
-		player.rotation.y = yaw;
-		player.rotation.x = pitch;
+		position = character->cameraPosition;
+		character->rotation.y = yaw;
+		character->rotation.x = pitch;
 	}
+
 
 }
 
@@ -65,6 +69,16 @@ mVector3 Camera::getFrontVector()
 mVector3 Camera::getRightVector()
 {
 	return right;
+}
+
+void Camera::setCharacter(Character* character)
+{
+	this->character = character;
+}
+
+const Character* Camera::getCharacter()
+{
+	return character;
 }
 
 void Camera::calculateView()

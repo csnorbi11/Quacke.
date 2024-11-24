@@ -3,7 +3,7 @@
 
 #include <glm/glm.hpp>
 
-#include "Player.hpp"
+#include "Character.hpp"
 
 /**
  * Handles camera, process mouse input and calculate the view matrix.
@@ -15,6 +15,8 @@ class Camera
 	mVector3 front;
 
 	float mouseSensitivity;
+
+	Character* character;
 
 
 public:
@@ -28,13 +30,16 @@ public:
 	~Camera();
 
 
-	void update(float deltaTime, Player& player);
+	void update(float deltaTime);
 
 	glm::mat4 getView();
 	void processMouse(double& xoffset, double& yoffset);
 
 	mVector3 getFrontVector();
 	mVector3 getRightVector();
+
+	void setCharacter(Character* character);
+	const Character* getCharacter();
 
 private:
 	void calculateView();

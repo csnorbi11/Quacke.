@@ -5,9 +5,9 @@ Enemy::Enemy(const char* shaderName, const char* modelPath, const char* name, fl
 	mVector3 pos, mVector3 rot)
 	:
 	Drawable(shaderName, modelPath),
-	CharacterController(name, 0, 0, movespeed, jumpspeed, pos, rot)
+	Character(name, 0, 0, movespeed, jumpspeed, pos, rot)
 {
-	initCharacterController(getModel());
+	initCharacter(getModel());
 }
 
 Enemy::~Enemy()
@@ -17,7 +17,7 @@ Enemy::~Enemy()
 
 void Enemy::update(float physicsFixedDeltaTime, float deltaTime)
 {
-	CharacterController::update(physicsFixedDeltaTime, deltaTime);
+	Character::update(physicsFixedDeltaTime, deltaTime);
 }
 
 void Enemy::update(float deltaTime, const Entity& target)

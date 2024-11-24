@@ -2,10 +2,10 @@
 
 Player::Player()
 	:
-	CharacterController("Player",5.0f,0.5f,10.0f),
+	Character("Player",5.0f,0.5f,10.0f),
 	moveInput(0.0, 0.0, 0.0)
 {
-	initCharacterController();
+	initCharacter();
 }
 
 Player::~Player()
@@ -20,7 +20,7 @@ void Player::update(float physicsFixedDeltaTime, float deltaTime)
 	calculateDirection();
 	calculateFrontAndRight();
 	move(physicsFixedDeltaTime);
-	CharacterController::update(physicsFixedDeltaTime,deltaTime);
+	Character::update(physicsFixedDeltaTime,deltaTime);
 }
 
 void Player::move(float physicsFixedDeltaTime)

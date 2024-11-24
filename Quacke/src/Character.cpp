@@ -1,6 +1,6 @@
-#include "CharacterController.hpp"
+#include "Character.hpp"
 
-CharacterController::CharacterController()
+Character::Character()
 	:
 	Entity(),
 	ghostObject(new btPairCachingGhostObject()),
@@ -25,7 +25,7 @@ CharacterController::CharacterController()
 	character->setJumpSpeed(8);
 }
 
-CharacterController::CharacterController(const char* name, float height, float width, float jumpspeed, float movespeed, mVector3 pos, mVector3 rot, mVector3 dir)
+Character::Character(const char* name, float height, float width, float jumpspeed, float movespeed, mVector3 pos, mVector3 rot, mVector3 dir)
 	:
 	Entity(name, pos, rot, dir),
 	character(nullptr),
@@ -42,12 +42,12 @@ CharacterController::CharacterController(const char* name, float height, float w
 
 }
 
-CharacterController::~CharacterController()
+Character::~Character()
 {
 
 }
 
-void CharacterController::initCharacterController()
+void Character::initCharacter()
 {
 	transform.setIdentity();
 	ghostObject->setWorldTransform(transform);
@@ -62,7 +62,7 @@ void CharacterController::initCharacterController()
 	character->setJumpSpeed(jumpSpeed);
 }
 
-void CharacterController::initCharacterController(Model model)
+void Character::initCharacter(Model model)
 {
 
 	transform.setIdentity();
@@ -76,7 +76,7 @@ void CharacterController::initCharacterController(Model model)
 	character->setJumpSpeed(jumpSpeed);
 }
 
-void CharacterController::update(float physicsFixedDeltaTime, float deltaTime)
+void Character::update(float physicsFixedDeltaTime, float deltaTime)
 {
 	character->setWalkDirection(btVector3(velocity.x, velocity.y, velocity.z));
 	transform = ghostObject->getWorldTransform();
@@ -85,7 +85,7 @@ void CharacterController::update(float physicsFixedDeltaTime, float deltaTime)
 	position.z = transform.getOrigin().z();
 }
 
-void CharacterController::calculateFrontAndRight()
+void Character::calculateFrontAndRight()
 {
 	front.x = cos(glm::radians(rotation.y));
 	front.z = sin(glm::radians(rotation.y));
