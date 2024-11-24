@@ -6,6 +6,9 @@
 <p>The project contains several thing:</p>
 <lu>
   <li>
+    Physics simulation
+  </li>
+  <li>
     Asset manager: which loads and check if an asset is loaded into the memory. 
   </li>
   <li>
@@ -38,6 +41,12 @@
     Enemies with pathfinding
   </li>
   <li>
+    Lighting, Skybox
+  </li>
+  <li>
+    Game manager
+  </li>
+  <li>
     UI
   </li>
   <li>
@@ -45,4 +54,5 @@
   </li>
 </lu>
 <img src="https://github.com/user-attachments/assets/27a9a242-2659-4eea-b4e7-02e49fe4c87b">
-<h2>Build: https://data.hu/get/14369633/Quacke.zip</h2>
+<h2>Dependencies</h2>
+Bullet3, glfw3, glad, assimp, glm. Dependencies are installed with vcpkg and x64-windows versions of them.
